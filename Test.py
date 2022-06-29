@@ -5,7 +5,7 @@ pygame.init()
 WIDTH, HEIGHT = 500, 500
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 
-pygame.display.set_caption("AWESOME GAME (being optimistic)")
+pygame.display.set_caption("USE {WASD} or {ARROW KEYS} TO MOVE & {ESCAPE} TO CLOSE")
 
 clock = pygame.time.Clock()
 
@@ -53,6 +53,9 @@ while run:
             if event.key == pygame.K_DOWN and not villian.colliderect(player) or event.key == pygame.K_s and not villian.colliderect(player):
                 pos2 += 5
                 break  
+            if event.key == pygame.K_ESCAPE:
+                pygame.quit()
+                break
             break
     if villian.colliderect(player):
         pygame.display.set_caption("DED")
