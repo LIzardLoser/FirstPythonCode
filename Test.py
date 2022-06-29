@@ -1,6 +1,7 @@
 
 import pygame
-pygame.init()
+from pygame.locals import *
+pygame.init()   
 
 WIDTH, HEIGHT = 500, 500
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -20,8 +21,13 @@ print("HI I MADE THIS - LIzard")
 print("https://github.com/LIzardLoser/FirstPythonCode")
 
 
+
 run = True
 while run:
+
+    pygame.font.init()
+    fontSize = 40
+    font = pygame.font.SysFont('Comic Sans MS',fontSize)
 
 
     WIN.fill((0,0,0))
@@ -31,6 +37,11 @@ while run:
 
     player #player
     villian #villian
+
+    if villian.colliderect(player):
+        pygame.display.set_caption("DED")
+        label = font.render("YOU DID THE DIE", False, (255,255,255))
+        WIN.blit(label,(0,0))
 
     clock.tick(60)
     #WIN.blit(villian, (200, 200))
@@ -58,7 +69,6 @@ while run:
                 pygame.quit()
                 break
             break
-    if villian.colliderect(player):
-        pygame.display.set_caption("DED")
+        
 
 pygame.quit()
