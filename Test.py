@@ -17,6 +17,7 @@ pos1 = 100
 pos2 = 100
 
 print("HI I MADE THIS - LIzard")
+print("https://github.com/LIzardLoser/FirstPythonCode")
 
 
 run = True
